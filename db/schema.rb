@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2023_04_17_054229) do
     t.string "postcode"
     t.string "address"
     t.string "telephone_number"
+
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2023_04_17_054229) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+
   end
 
 end
