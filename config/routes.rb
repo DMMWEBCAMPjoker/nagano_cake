@@ -26,9 +26,9 @@ root to: 'public/homes#top'
 
   #顧客一覧
   get '/admin/customers' => 'admin/customers#index'
-  get '/admin/customers/:id' => 'admin/customers#show'
-  get '/admin/customers/:id/edit' => 'admin/customers#edit'
-  patch '/admin/customers/:id' => 'admin/customers#update'
+  get '/admin/customers/:id' => 'admin/customers#show' ,as: 'admin_customer'
+  get '/admin/customers/:id/edit' => 'admin/customers#edit' ,as: 'admin_customer_edit'
+  patch '/admin/customers/:id' => 'admin/customers#update', as: 'admin_customer_update'
 
   #商品
   get '/admin/items/new' => 'admin/items#new'
