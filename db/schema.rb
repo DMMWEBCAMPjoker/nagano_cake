@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "item_id", null: false
+    t.string "quantity", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -71,11 +79,28 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+
+  create_table "deliveries", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.string "postcode", null: false
+    t.string "address", null: false
+
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "postage", default: 800, null: false
+    t.integer "invoice", null: false
+    t.integer "payment_method", default: 1, null: false
+    t.string "delivery_postcode", null: false
+    t.string "delivery_address", null: false
+    t.string "delivery_name", null: false
+    t.integer "status", default: 1, null: false
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
@@ -110,6 +135,7 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
