@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_120439) do
     t.integer "customer_id", null: false
     t.string "postcode", null: false
     t.string "address", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -69,6 +72,14 @@ ActiveRecord::Schema.define(version: 2023_04_17_120439) do
     t.string "delivery_address", null: false
     t.string "delivery_name", null: false
     t.integer "status", default: 1, null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "genre_id", null: false
+    t.integer "price", null: false
+    t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -97,4 +108,6 @@ ActiveRecord::Schema.define(version: 2023_04_17_120439) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
 end
