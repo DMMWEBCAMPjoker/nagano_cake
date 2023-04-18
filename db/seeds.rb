@@ -11,5 +11,8 @@ Admin.create!(
 )
 Item.create!(
    name: 'チョコバナナミルフィーユ',
-   price: '1100'
+   price: '1000'
 )
+CartItem.create!(
+   quantity: '1'
+   )
