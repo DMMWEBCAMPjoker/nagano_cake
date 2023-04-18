@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.integer "customer_id", null: false
     t.string "postcode", null: false
     t.string "address", null: false
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.string "delivery_address", null: false
     t.string "delivery_name", null: false
     t.integer "status", default: 1, null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
