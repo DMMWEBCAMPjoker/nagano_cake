@@ -20,4 +20,13 @@ root to: 'public/homes#top'
   get '/admin/customers/:id/edit' => 'admin/customers#edit'
   patch '/admin/customers/:id' => 'admin/customers#update'
 
+  #商品
+  get '/admin/items/new' => 'admin/items#new'
+   get '/admin/items/:id' => 'admin/items#show'
+  get '/admin/items' => 'admin/items#index'
+  post '/admin/items' => 'admin/items#create'
+  get 'admin/items/:id/edit' => 'admin/items#edit'
+  patch '/admin/items/:id' => 'admin/items#update'
+
+
 end
