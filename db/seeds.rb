@@ -9,3 +9,7 @@ Admin.create!(
    email: 'admin@admin',
    password: 'testtest'
 )
+Item.create!(
+   name: 'チョコバナナミルフィーユ',
+   price: '1100'
+)
