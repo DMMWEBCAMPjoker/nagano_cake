@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.integer "customer_id", null: false
     t.string "postcode", null: false
     t.string "address", null: false
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.string "delivery_address", null: false
     t.string "delivery_name", null: false
     t.integer "status", default: 1, null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
@@ -135,7 +137,6 @@ ActiveRecord::Schema.define(version: 2023_04_18_083234) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
