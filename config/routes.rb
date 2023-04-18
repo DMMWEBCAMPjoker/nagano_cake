@@ -7,7 +7,6 @@ devise_for :customers,skip: [:passwords], controllers: {
 
 resources :cart_items, only:[:index, :update, :destroy, :create]
 delete 'cart_items/destroy_all' => 'cart_items#destroy_all',as: 'destroy_all'
-get 'cart_items/index' => 'cart_items#index'
 resources :orders, only:[:new, :create, :index, :show]
 post 'orders/check' => 'orders#check', as: 'check'
 get 'orders/complete' => 'orders#complete', as: 'complete'

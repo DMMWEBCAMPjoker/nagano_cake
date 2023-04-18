@@ -15,10 +15,15 @@ Genre.create!(
 Item.create!(
    # id: 1,
    name: 'チョコバナナミルフィーユ',
-   price: '1000'
+   price: 1000,
+   description: 'aa',
+   genre_id: 1
 )
+
+#item.image.attach(io: File.open(Rails.root.join('app/assets/images/cat.jpg')),filename: 'cat.jpg')
 Customer.create!(
-   # id: 1
+       email: 'admin@admin',
+       password: 'testtest'
 )
 
 CartItem.create!(
