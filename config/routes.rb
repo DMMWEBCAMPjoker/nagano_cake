@@ -12,4 +12,11 @@ devise_for :admin, controllers: {
 root to: 'public/homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'choose' => 'public/homes#choose'
+
+  #顧客一覧
+  get '/admin/customers' => 'admin/customers#index'
+  get '/admin/customers/:id' => 'admin/customers#show'
+  get '/admin/customers/:id/edit' => 'admin/customers#edit'
+  patch '/admin/customers/:id' => 'admin/customers#update'
+
 end
