@@ -4,6 +4,7 @@ devise_for :customers,skip: [:passwords], controllers: {
   sessions: 'public/sessions'
 }
 
+get '/items' => 'public/items#index'
 
 devise_for :admin, controllers: {
   sessions: "admin/sessions"
