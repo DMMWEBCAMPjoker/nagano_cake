@@ -32,8 +32,8 @@ root to: 'public/homes#top'
 
   #商品
   get '/admin/items/new' => 'admin/items#new'
-   get '/admin/items/:id' => 'admin/items#show'
-  get '/admin/items' => 'admin/items#index'
+  get '/admin/items/:id' => 'admin/items#show' ,as: 'admin_item_show'
+  get '/admin/items' => 'admin/items#index' ,as: 'admin_item_index'
   post '/admin/items' => 'admin/items#create'
   get 'admin/items/:id/edit' => 'admin/items#edit'
   patch '/admin/items/:id' => 'admin/items#update'

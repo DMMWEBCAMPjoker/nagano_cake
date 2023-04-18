@@ -10,7 +10,7 @@ class Admin::GenresController < ApplicationController
   end
 
   def edit
-    @genre = Genre.finf(params[:id])
+    @genre = Genre.find(params[:id])
   end
 
   def update
