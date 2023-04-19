@@ -5,14 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
 # #Admin.create!(
 #    email: 'admin@admin',
 #    password: 'testtest'
 # )
-Genre.create!(
-   name: 'cake'
-)
 Item.create!(
    # id: 1,
    name: 'チョコバナナミルフィーユ',
@@ -22,17 +18,17 @@ Item.create!(
 )
 
 #item.image.attach(io: File.open(Rails.root.join('app/assets/images/cat.jpg')),filename: 'cat.jpg')
-Customer.create!(
-       email: 'admin@admin',
-       password: 'testtest'
-)
+# Customer.create!(
+#        email: 'admin@admin',
+#        password: 'testtest'
+# )
 
 CartItem.create!(
    item_id: 1,
    customer_id: 1,
    quantity: 1
-)
-Admin.create!(
-    email: 'admin@admin',
-    password: 'testtest'
  )
+# Admin.create!(
+#     email: 'admin@admin',
+#     password: 'testtest'
+#  )
