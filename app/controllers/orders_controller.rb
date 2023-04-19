@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
   def complete
   end
-  
+
   def create
   end
 
@@ -19,15 +19,15 @@ class OrdersController < ApplicationController
 
   def show
   end
-  
+
   private
-  
+
   def order_params
     params.require(:order).permit(:payment_method, :delivery_name, :delivery_address, :delivery_postcode, :postage, :invoice)
   end
-  
-  def deliveries_params
-    params.require(:oeder).permit(:name, :address, :postcode)
+
+  def delivery_address_params
+    params.require(:order).permit(:delivery_name, :delivery_address, :delivery_postcode)
   end
-  
+
 end
