@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
 
   def index
     @order = Order.find(params[:id])
-    @sum=0
+    @sum= 0
   end
 
   def show
