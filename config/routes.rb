@@ -24,6 +24,16 @@ root to: 'public/homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'choose' => 'public/homes#choose'
 
+  #publicマイページ
+  get '/customers/my_page' => 'public/customers#show'
+  get '/customers/infomation/edit' => 'public/customers#edit'
+  patch '/customers/infomation' => 'public/customers#update'
+  get '/customers/unsubscribe' => 'public/customers#unsubscribe'
+  patch '/customers/withdrow' => 'public/customers#withdrow'
+
+
+
+
   #顧客一覧
   get '/admin/customers' => 'admin/customers#index'
   get '/admin/customers/:id' => 'admin/customers#show' ,as: 'admin_customer'
