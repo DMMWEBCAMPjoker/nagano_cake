@@ -1,0 +1,16 @@
+<h2>ジャンル追加</h2>
+<%= flash[:notice] %>
+ <%= form_with model: @genre, url: admin_genres_create_path, method: :post do |f| %>
+  <p>ジャンル名<%= f.text_field :name %></p>
+  <%= f.submit '新規登録' %>
+ <% end %>
+
+  <% @genres.each do |genre| %>
+  <table>
+   <tr>
+    <td><%= genre.name %></td>
+    <td><%= link_to "編集する", admin_genres_edit_path(genre) %></td>
+   </tr>
+  </table>
+
+  <% end %>
