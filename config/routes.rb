@@ -48,5 +48,11 @@ root to: 'public/homes#top'
   get 'admin/items/:id/edit' => 'admin/items#edit'
   patch '/admin/items/:id' => 'admin/items#update'
 
+  #ジャンル
+  get '/admin/genres' => 'admin/genres#index'
+  post '/admin/genres' => 'admin/genres#create', as: 'admin_genres_create'
+  get '/admin/genres/:id/edit' => 'admin/genres#edit', as: 'admin_genres_edit'
+  patch '/admin/genres/:id' => 'admin/genres#update', as: 'admin_genres_update'
+
 
 end
