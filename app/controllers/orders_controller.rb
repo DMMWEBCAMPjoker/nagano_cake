@@ -13,8 +13,13 @@ class OrdersController < ApplicationController
   end
 
   def index
+<<<<<<< HEAD
     @orders = current_customer.orders
     @sum = 0
+=======
+    @order = Order.find(params[:id])
+    @sum= 0
+>>>>>>> origin/develop
   end
 
   def show
@@ -26,8 +31,13 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:payment_method, :delivery_name, :delivery_address, :delivery_postcode, :postage, :invoice)
   end
   
+<<<<<<< HEAD
   def delivery_address_params
     params.require(:order).permit(:delivery_name, :delivery_address, :delivery_postcode)
+=======
+  def deliveries_params
+    params.require(:oeder).permit(:name, :address, :postcode)
+>>>>>>> origin/develop
   end
   
 end
