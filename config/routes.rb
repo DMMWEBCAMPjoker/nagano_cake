@@ -14,6 +14,7 @@ get 'orders/complete' => 'orders#complete', as: 'complete'
 resources :deliveries, only:[:index, :edit, :create, :update, :destroy]
 
 get '/items' => 'public/items#index'
+get '/items/:id' => 'public/items#show', as: 'items_show'
 
 
 devise_for :admin, controllers: {
