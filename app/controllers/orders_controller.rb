@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   def new
-    @order = current_customer.orders.new
+    @order = orders.new
+    @customer = Customer.find(surrent_customer.id)
+    @delivery_address = current_customer.destinations
   end
 
   def check
