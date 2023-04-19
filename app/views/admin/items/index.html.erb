@@ -17,17 +17,25 @@
           </tr>
         </thead>
 
+<% @items.each do |item| %>
         <tbody>
-          <% @items.each do |item| %>
           <tr>
             <td><%= item.id %></td>
-            <td><%= link_to item.name, admin_item_path(item.id) %></td>
-            <td><%= item.price %></td>
+            <td><%= link_to item.name, admin_item_show_path(item) %></td>
+             <td>¥<%= (item.price).to_s(:delimited) %></td>
             <td><%= item.genre.name %></td>
-            <td></td>  <!-- 販売ステータス -->
+            <td></td>
+            <!-- 販売ステータス -->
+            <td>
+              <% if item.is_deleted == false %>
+              <span>販売中</span>
+              <% else %>
+              <span>販売停止中</span>
+              <% end %>
+            </td>
           </tr>
-          <% end %>
         </tbody>
+        <% end %>
       </table>
       <!-- ページネート -->
 

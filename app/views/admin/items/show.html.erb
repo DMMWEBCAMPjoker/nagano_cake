@@ -1,0 +1,43 @@
+<div>商品詳細</div>
+
+<div>
+  <%= image_tag @item.image, size: '300×200' %>
+</div>
+
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td>商品名</td>
+        <td><%= @item.name %></td>
+      </tr>
+      <tr>
+        <td>商品説明</td>
+        <td><%= @item.description %></td>
+      </tr>
+      <tr>
+        <td>ジャンル</td>
+        <td><%= @item.genre.name %></td>
+      </tr>
+      <tr>
+        <td>税込価格<br>(税抜価格)</td>
+        <td><%= (@item.add_tax_price).to_s(:dalimited) %><br>(¥<%= (@item.price).to_s(:dalimited) %>)</td>
+      </tr>
+      <tr>
+        <td>販売ステータス</td>
+        <% if @item.is_deleted == false %>
+        <td><strong>販売中</strong></td>
+        <% else %>
+        <td><strong>販売停止中</strong></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <%= link_to '編集する', admin_items_path(@item), class: "btn btn-success" %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

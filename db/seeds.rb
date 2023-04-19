@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 # #Admin.create!(
 #    email: 'admin@admin',
 #    password: 'testtest'
@@ -31,3 +32,7 @@ CartItem.create!(
    customer_id: 1,
    quantity: 1
 )
+Admin.create!(
+    email: 'admin@admin',
+    password: 'testtest'
+ )

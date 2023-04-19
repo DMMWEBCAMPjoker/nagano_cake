@@ -13,6 +13,7 @@ get 'orders/complete' => 'orders#complete', as: 'complete'
 resources :deliveries, only:[:index, :edit, :create, :update, :destroy]
 
 get '/items' => 'public/items#index'
+get '/items/:id' => 'public/items#show', as: 'items_show'
 
 
 devise_for :admin, controllers: {
@@ -23,6 +24,16 @@ root to: 'public/homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'choose' => 'public/homes#choose'
 
+  #publicマイページ
+  get '/customers/my_page' => 'public/customers#show'
+  get '/customers/infomation/edit' => 'public/customers#edit'
+  patch '/customers/infomation' => 'public/customers#update'
+  get '/customers/unsubscribe' => 'public/customers#unsubscribe'
+  patch '/customers/withdrow' => 'public/customers#withdrow'
+
+
+
+
   #顧客一覧
   get '/admin/customers' => 'admin/customers#index'
   get '/admin/customers/:id' => 'admin/customers#show' ,as: 'admin_customer'
@@ -31,8 +42,8 @@ root to: 'public/homes#top'
 
   #商品
   get '/admin/items/new' => 'admin/items#new'
-   get '/admin/items/:id' => 'admin/items#show'
-  get '/admin/items' => 'admin/items#index'
+  get '/admin/items/:id' => 'admin/items#show' ,as: 'admin_item_show'
+  get '/admin/items' => 'admin/items#index' ,as: 'admin_item_index'
   post '/admin/items' => 'admin/items#create'
   get 'admin/items/:id/edit' => 'admin/items#edit'
   patch '/admin/items/:id' => 'admin/items#update'
