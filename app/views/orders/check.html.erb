@@ -8,18 +8,24 @@
       <th>小計</th>
     </tr>
   </thead>
+  <% @cart_items.each do |cart_item| %>
   <tbody>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><%= cart_item.item.name %></td>
+      <td><%= cart_item.item.add_tax_price %></td>
+      <td><%= cart_item.quantity %></td>
+      <td><%= cart_item.subtotal %></td>
+      <% @sum += cart_item.subtotal %>
     </tr>
   </tbody>
+  <% end %>
 </table>
 <h3>支払方法</h3>
-
+  <%= @order.payment_method %>
 <h3>お届け先</h3>
+  〒<%= @order.delivery_postcode %>
+  <%= @order.delivery_address %>
+  <%= @order.delivery_name %>
 
 <table>
   <thead>
@@ -31,11 +37,19 @@
   </thead>
   <tbody>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><%= @order.postage %></td>
+      <td><%= @sum %></td>
+      <td><%= @sum += @order.postage %></td>
     </tr>
   </tbody>
 </table>
 
-<%= link_to "注文を確定する" 
+<%= form_with model: @order,  url: complete_path, method: :post do |f| %>
+  <%= f.hidden_field :delivery_postcode, :value => @order.delivery_postcode %>
+  <%= f.hidden_field :delivery_address, :value => @order.delivery_address %>
+  <%= f.hidden_field :delivery_name, :value => @order.delivery_name %>
+  <%= f.hidden_field :postage, :value => @order.postage %>
+  <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+  <%= f.hidden_field :invoice, :value => @sum + @order.postage %>
+<%= f.submit "注文を確定する", class:"btn btn-success" %>
+<% end %>
