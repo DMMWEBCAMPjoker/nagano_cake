@@ -1,11 +1,11 @@
 <h3>注文情報入力</h3>
   <h3>支払方法</h3>
   <%= form_with model: @order, url: check_path, method: :post do |f| %>
-    <%= f.radio_button :payment_method, "credit_card" %>
-    <%= f.label :payment_method_credit_card, "クレジットカード" %>
+    <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+    <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:credit_card] %>
     <br>
-    <%= f.radio_button :payment_method, "transfer" %>
-    <%= f.label :payment_method_tarnsfer, "銀行振込" %>
+    <%= f.radio_button :payment_method, Order.payment_methods.key(2) %>
+    <%= f.label :payment_method_tarnsfer, Order.payment_methods_i18n[:transfer] %>
   <% end %>
   <h3>お届け先</h3>
   <%= form_with model: @order, url: check_path, method: :post do |f| %>
@@ -20,7 +20,7 @@
     <%= f.radio_button :address_number, 3 %>
     <%= f.label :address_number_3, "新しいお届け先" %>
     <br>
-      <%= f.label :delivery_postcode, "郵便番号" %>
+      <%= f.label :delivery_postcode, "郵便番号(ハイフンなし)" %>
       <%= f.text_field :delivery_postcode, autofocus: true, autocomplete: "postcode" %>
     <br>
       <%= f.label :delivery_address, "住所" %>
