@@ -9,7 +9,6 @@ resources :cart_items, only:[:index, :update, :destroy, :create]
 resources :orders, only:[:new, :create, :index, :show]
 post 'orders/check' => 'orders#check', as: 'check'
 get 'orders/complete' => 'orders#complete', as: 'complete'
-resources :deliveries, only:[:index, :edit, :create, :update, :destroy]
 
 get '/items' => 'public/items#index'
 get '/items/:id' => 'public/items#show', as: 'items_show'
@@ -29,6 +28,13 @@ root to: 'public/homes#top'
   patch '/customers/infomation' => 'public/customers#update'
   get '/customers/unsubscribe' => 'public/customers#unsubscribe'
   patch '/customers/withdrow' => 'public/customers#withdrow'
+
+  #public配送先
+  get '/deliveries' => 'public/deliveries#index', as: 'deliveries_index'
+  get '/deliveries/:id/edit' => 'public/deliveries#edit', as: 'deliveries_edit'
+  post '/deliveries' => 'public/deliveries#create', as: 'deliveries_create'
+  patch '/deliveries/:id' => 'public/deliveries#update', as: 'deliveries_update'
+  delete '/deliveries/:id' => 'public/deliveries#destroy', as: 'deliveries_destroy'
 
 
 
