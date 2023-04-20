@@ -29,6 +29,13 @@ root to: 'public/homes#top'
   get '/customers/unsubscribe' => 'public/customers#unsubscribe'
   patch '/customers/withdrow' => 'public/customers#withdrow'
 
+  #public配送先
+  get '/deliveries' => 'public/deliveries#index', as: 'deliveries_index'
+  get '/deliveries/:id/edit' => 'public/deliveries#edit', as: 'deliveries_edit'
+  post '/deliveries' => 'public/deliveries#create', as: 'deliveries_create'
+  patch '/deliveries/:id' => 'public/deliveries#update', as: 'deliveries_update'
+  delete '/deliveries/:id' => 'public/deliveries#destroy', as: 'deliveries_destroy'
+
 
 
 
