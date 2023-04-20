@@ -15,11 +15,11 @@ class OrdersController < ApplicationController
       @order.delivery_postcode = current_customer.postcode
 
     elsif params[:order][:address_number]  == "2"
-      if Dekivery.exists?(id: params[:order][:address_id])
-        @delivery = Delivery.find(params[:order][:address_id])
-        @order.address = @deliveries.address
-        @order.postcode = @deliveries.postcode
-        @order.name = @deliveries.name
+      if Delivery.exists?(id: params[:order][:delivery_id])
+        @delivery = Delivery.find(params[:order][:delivery_id])
+        @order.delivery_address = @delivery.address
+        @order.delivery_postcode = @delivery.postcode
+        @order.delivery_name = @delivery.name
       else
         render :new
       end
