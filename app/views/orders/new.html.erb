@@ -15,18 +15,18 @@
     <br>
     <%= f.radio_button :address_number, 2 %>
     <%= f.label :address_number_2, "登録済住所から選択" %><br>
-    <%#= f.select :address_id, options_from_collection_for_select(current_customer.addresses, :id, :address_display) %>
+    <%= f.select :delivery_id, options_from_collection_for_select(current_customer.deliveries, :id, :address_was) %>
     <br>
     <%= f.radio_button :address_number, 3 %>
     <%= f.label :address_number_3, "新しいお届け先" %>
     <br>
-      <%= f.label :postal_code, "郵便番号" %>
-      <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+      <%= f.label :delivery_postcode, "郵便番号" %>
+      <%= f.text_field :delivery_postcode, autofocus: true, autocomplete: "postcode" %>
     <br>
-      <%= f.label :address, "住所" %>
-      <%= f.text_area :address, autofocus: true, autocomplete: "address" %>
+      <%= f.label :delivery_address, "住所" %>
+      <%= f.text_area :delivery_address, autofocus: true, autocomplete: "address" %>
     <br>
-      <%= f.label :name, "宛名" %>
-      <%= f.text_field :name %>
+      <%= f.label :delivery_name, "宛名" %>
+      <%= f.text_field :delivery_name %>
     <%= f.submit "確認画面へ進む", class:"btn btn-primary" %>
   <% end %>

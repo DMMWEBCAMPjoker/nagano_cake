@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def new
-    @order = Order.new
+    @order = current_customer.orders.new
   end
 
   def check
@@ -24,13 +24,16 @@ class OrdersController < ApplicationController
         render :new
       end
 
-    elsif params[:order][:address_number] == "3"
-      delivery_new = current_customer.deliveries.new(delivery_params)
-      if delivery_new.save
-      else
-        render :new
-      end
+    elsif params[:order][:address_option] = "3"
+      @order.delivery_postcode = params[:order][:delivery_postcode]
+      @order.delivery_address = params[:order][:delivery_address]
+      @order.delivery_name = params[:order][:delivery_name]
+
+    else
+      @order = current_customer.deliveries.new
+      render :new
     end
+    
   end
 
   def complete
