@@ -1,0 +1,8 @@
+ja:
+    enums:
+      order_item:
+        production_status:
+          cannot_start: "着手不可"
+          waiting_production: "製作待ち"
+          in_production: "製作中"
+          completion_production: "製作完了"
