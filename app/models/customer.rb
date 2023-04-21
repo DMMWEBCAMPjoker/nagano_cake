@@ -8,4 +8,8 @@ class Customer < ApplicationRecord
   has_many :orders, dependent: :destroy
   #デリバリーアソシエーション
   has_many :deliveries, dependent: :destroy
+
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
 end
