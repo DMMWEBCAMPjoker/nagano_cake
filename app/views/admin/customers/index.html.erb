@@ -1,11 +1,14 @@
-<h1>会員一覧</h1>
 
 
-<table>
-    <tr>
+<div class="container">
+  <div class="row">
+    <h2 class="bg-light">会員一覧</h2>
+    <table class="table">
+    <tr class="bg-light">
       <th>会員ID</th>
       <th>氏名</th>
       <th>メールアドレス</th>
+      <th></th>
     </tr>
     <% @customers.each do |customer| %>
     <tr>
@@ -17,7 +20,7 @@
        <td><%= customer.email %></td>
        <td>
          <% if customer.is_deleted == true%>
-           <p class="text-secondary">退会済</p>
+           <p class="text-danger">退会済</p>
          <% else %>
            <p class="text-success">有効</p>
          <% end %>
@@ -25,4 +28,7 @@
     </tr>
     <% end %>
 </table>
+
+  </div>
+</div>
 
