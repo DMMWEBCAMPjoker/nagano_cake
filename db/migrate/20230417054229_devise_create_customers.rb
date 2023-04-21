@@ -15,6 +15,8 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       t.string :address
       #電話番号
       t.string :telephone_number
+      #退会機能
+      t.boolean :is_deleted, default: false, null: false
 
 
 

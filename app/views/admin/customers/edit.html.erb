@@ -35,10 +35,17 @@
       <td><%= f.text_field :email %></td>
     </tr>
     <tr>
-      <td>会員ステータス</td>
-    </tr>
     <tr>
+      <td><%= f.label :"会員ステータス", class: "col-sm-4 control-label" %></td>
+      <td>
+        　<%= f.radio_button :is_deleted, false %>
+        　<%= f.label :is_deleted, "有効"%>
+        　<%= f.radio_button :is_deleted, true %>
+        　<%= f.label :is_deleted, "退会" %>
+      </td>
+     </tr>
+     <tr>
       <td><%= f.submit '変更を保存' %></td>
     </tr>
-</table>
-<% end %>
+   </table>
+   <% end %>

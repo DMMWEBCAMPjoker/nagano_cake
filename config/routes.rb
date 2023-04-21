@@ -27,7 +27,9 @@ root to: 'public/homes#top'
   get '/customers/infomation/edit' => 'public/customers#edit'
   patch '/customers/infomation' => 'public/customers#update'
   get '/customers/unsubscribe' => 'public/customers#unsubscribe'
-  patch '/customers/withdrow' => 'public/customers#withdrow'
+  patch '/customers/withdrow' => 'public/customers#withdrow', as: 'customers_withdrow'
+
+
 
   #public配送先
   delete '/deliveries/:id' => 'public/deliveries#destroy', as: 'deliveries_destroy'
