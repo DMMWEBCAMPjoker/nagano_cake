@@ -4,7 +4,9 @@
   <div class="col-5">
    <h3 class="bg-light">ジャンル一覧・追加</h3>
   <%= form_with model: @genre, url: admin_genres_create_path, method: :post do |f| %>
-    <p>ジャンル名<%= f.text_field :name %><%= f.submit '新規登録', class:"btn btn-success" %></p>
+  <div class="form-check form-check-inline">
+    <p>ジャンル名&emsp;&emsp;<%= f.text_field :name %>&emsp;&emsp;<%= f.submit '新規登録', class:"btn btn-success" %></p>
+  </div>
   <% end %>
 
   <table class="table">
