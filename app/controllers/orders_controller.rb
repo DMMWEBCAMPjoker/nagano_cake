@@ -7,8 +7,8 @@ class OrdersController < ApplicationController
   end
 
   def check
-    @cart_items = current_customer.cart_items
     @order = Order.new(order_params)
+    @cart_items = current_customer.cart_items
     @sum = 0
     @order.postage = 800
     
