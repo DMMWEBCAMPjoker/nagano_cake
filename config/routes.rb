@@ -17,8 +17,9 @@ get '/items/:id' => 'public/items#show', as: 'items_show'
 devise_for :admin, controllers: {
   sessions: "admin/sessions"
 }
-
-root to: 'public/homes#top'
+  #トップページ
+  root to: 'public/homes#top'
+  get 'homes/about' => 'public/homes#about'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'choose' => 'public/homes#choose'
 
