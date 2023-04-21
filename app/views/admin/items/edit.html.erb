@@ -32,15 +32,16 @@
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">ジャンル</label>
         <div class="col-sm-8">
-        <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name),  { include_blank: "--選択してください--" }  %>
+        <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name),  { include_blank: "--選択してください--" }, class: "form-control" %>
       </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">税抜価格</label>
-        <div class="col-sm-8">
-        <%= f.text_field :price, class: "form-control" %>円
+        <div class="col-sm-7">
+        <%= f.text_field :price, class: "form-control-file" %>
       </div>
+      <div class="col-sm-1">円</div>
       </div>
 
       <div class="form-group row">
