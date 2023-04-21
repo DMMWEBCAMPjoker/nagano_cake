@@ -1,16 +1,24 @@
-<h2>ジャンル追加</h2>
 <%= flash[:notice] %>
- <%= form_with model: @genre, url: admin_genres_create_path, method: :post do |f| %>
-  <p>ジャンル名<%= f.text_field :name %></p>
-  <%= f.submit '新規登録' %>
- <% end %>
-
-  <% @genres.each do |genre| %>
-  <table>
-   <tr>
-    <td><%= genre.name %></td>
-    <td><%= link_to "編集する", admin_genres_edit_path(genre) %></td>
-   </tr>
-  </table>
-
+<div class="container">
+ <div class="row">
+  <div class="col-5">
+   <h3 class="bg-light">ジャンル一覧・追加</h3>
+  <%= form_with model: @genre, url: admin_genres_create_path, method: :post do |f| %>
+    <p>ジャンル名<%= f.text_field :name %><%= f.submit '新規登録', class:"btn btn-success" %></p>
   <% end %>
+
+  <table class="table">
+   <tr class="bg-light">
+    <td>ジャンル</td>
+    <td></td>
+   </tr>
+    <% @genres.each do |genre| %>
+    <tr>
+     <td><%= genre.name %></td>
+     <td><%= link_to "編集する", admin_genres_edit_path(genre), class:"btn btn-success" %></td>
+   </tr>
+   <% end %>
+  </table>
+ </div>
+</div>
+</div>
