@@ -7,7 +7,7 @@ devise_for :customers,skip: [:passwords], controllers: {
 delete 'cart_items/destroy_all' => 'cart_items#destroy_all',as: 'destroy_all'
 resources :cart_items, only:[:index, :update, :destroy, :create]
 
-  #public注文
+  #publicオーダー
 resources :orders, only:[:new, :create, :index, :show]
 post 'orders/check' => 'orders#check', as: 'check'
 post 'orders/complete' => 'orders#complete', as: 'complete'
@@ -61,6 +61,8 @@ root to: 'public/homes#top'
   get '/admin/genres/:id/edit' => 'admin/genres#edit', as: 'admin_genres_edit'
   patch '/admin/genres/:id' => 'admin/genres#update', as: 'admin_genres_update'
 
+  #adminオーダー
   get '/admin/orders/:id' => 'admin/orders#show'
   patch 'admin/orders/:id' => 'admin/orders#update'
+  
 end
