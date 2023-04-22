@@ -7,7 +7,7 @@
     <div class="col-lg-10">
       <%= form_with model: @item, url: admin_items_path, method: :post do |f| %>
 
-      <form>
+    <form>
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">商品画像</label>
         <div class="col-sm-8">
@@ -32,7 +32,7 @@
       <div class="form-group row">
         <label class="col-sm-4 col-form-label">ジャンル</label>
         <div class="col-sm-8">
-        <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name),  { include_blank: "--選択してください--" } %>
+        <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name),  { include_blank: "--選択してください--" }, class: "form-control" %>
       </div>
       </div>
 
@@ -58,11 +58,8 @@
       <div class="form-group row justify-content-center">
         <%= f.submit "新規登録", class: "btn btn-success" %>
       </div>
-      </form>
-      </div>
-      </div>
-      <!--</form>-->
-      <% end %>
+    </form>
     </div>
   </div>
+      <% end %>
 </div>
