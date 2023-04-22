@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @sum = 0
     @order.postage = 800
-    
+
     if params[:order][:address_number] == "1"
       @order.delivery_name = current_customer.last_name + current_customer.first_name
       @order.delivery_address = current_customer.address
