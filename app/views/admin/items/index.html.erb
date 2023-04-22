@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
       <h4 class="col-lg-auto bg-light text-center">商品一覧</h4>
-      </div>
+  </div>
 
       <div class="row justify-content-end">
       <%= link_to admin_items_new_path do %>
@@ -28,8 +28,7 @@
               <td><%= link_to item.name, admin_item_show_path(item) %></td>
               <td><%= (item.price).to_s(:delimited) %></td>
               <td><%= item.genre.name %></td>
-              <!--<td></td>-->
-            <!-- 販売ステータス -->
+
               <td class="font-weight-bold">
                 <% if item.is_deleted == false %>
                 <div class="text-success">販売中</div>
@@ -41,9 +40,7 @@
           </tbody>
           <% end %>
         </table>
-        <!-- ページネート -->
         <%= paginate @items %>
 
       </div>
-    <!--</div>-->
 </div>
