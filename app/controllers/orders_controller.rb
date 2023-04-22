@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
       @order = current_customer.deliveries.new
       render :new
     end
-    
+
   end
 
   def complete

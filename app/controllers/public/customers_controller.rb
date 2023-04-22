@@ -11,12 +11,12 @@ class Public::CustomersController < ApplicationController
   end
 
   def update
-     @customer = Customer.find(params[:id])
-    if @customer.update(customer_params)
-      redirect_to admin_customer_path
-    else
-      render 'edit'
-    end
+    @customer = current_customer
+     if @customer.update(customer_params)
+        redirect_to customers_my_page_path
+     else
+        render 'edit'
+     end
   end
 
   def unsbscribe
