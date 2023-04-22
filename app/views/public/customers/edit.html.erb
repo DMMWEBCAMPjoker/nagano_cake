@@ -1,36 +1,38 @@
-<h2>会員情報編集</h2>
+<div class="container">
+  <div class="row">
 
-<%= form_with model: @customer, url: customers_infomation_path(@customer.id), method: :patch do |f| %>
-
-<table>
-  <tr>
-    <td>氏名</td>
-    <td><%= f.text_field :last_name %><%= f.text_field :first_name %></td>
-  </tr>
-  <tr>
-    <td>フリガナ</td>
-    <td><%= f.text_field :last_name_kana %><%= f.text_field :first_name_kana %></td>
-  </tr>
-  <tr>
-    <td>郵便番号</td>
-    <td><%= f.text_field :postcode %></td>
-  </tr>
-  <tr>
-    <td>住所</td>
-    <td><%= f.text_field :address %></td>
-  </tr>
-  <tr>
-    <td>電話番号</td>
-    <td><%= f.text_field :telephone_number %></td>
-  </tr>
-  <tr>
-    <td>メールアドレス</td>
-    <td><%= f.text_field :email %></td>
-  </tr>
-  <tr>
-    <td><%= f.submit '編集内容を保存' %></td>
-  </tr>
-</table>
-
-<% end %>
-<%= link_to "退会する", customers_unsubscribe_path %>
+    <%= form_with model: @customer, url: customers_infomation_path((current_customer)), method: :patch do |f| %>
+    <h4>会員情報編集</h4>
+      <table class="table table-borderless">
+        <tr>
+          <td>氏名</td>
+          <td><%= f.text_field :last_name %>&emsp;&emsp;&emsp;<%= f.text_field :first_name %></td>
+        </tr>
+        <tr>
+          <td>フリガナ</td>
+          <td><%= f.text_field :last_name_kana %>&emsp;&emsp;&emsp;<%= f.text_field :first_name_kana %></td>
+        </tr>
+        <tr>
+          <td>郵便番号</td>
+          <td><%= f.text_field :postcode %></td>
+        </tr>
+        <tr>
+          <td>住所</td>
+          <td><%= f.text_field :address %></td>
+        </tr>
+        <tr>
+          <td>電話番号</td>
+          <td><%= f.text_field :telephone_number %></td>
+        </tr>
+        <tr>
+          <td>メールアドレス</td>
+          <td><%= f.text_field :email %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= f.submit '編集内容を保存', class: "btn btn-success"%>&emsp;&emsp;&emsp;&emsp;<%= link_to "退会する", customers_unsubscribe_path, class: "btn btn-danger" %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>

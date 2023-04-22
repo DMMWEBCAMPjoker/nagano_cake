@@ -4,7 +4,7 @@
         <h3 class="bg-light">マイページ</h3>
         <br>
         <div class="form-check form-check-inline">
-        <h3 class="bg-light"><strong>登録情報</strong></h3> &emsp;&emsp;&emsp;<%= link_to "編集する", customers_infomation_edit_path, class:"btn btn-success" %>
+        <h4 class="bg-light"><strong>登録情報</strong></h4> &emsp;&emsp;&emsp;<%= link_to "編集する", customers_infomation_edit_path, class:"btn btn-success" %>
         </div>
           <table class="table col-sl-9">
             <tr>
@@ -32,7 +32,8 @@
               <td><%= @customer.email %></td>
             </tr>
           </table>
-          <h3><配送先 <%= link_to "一覧を見る", deliveries_index_path %></h3>
+          <h4>配送先&emsp;&nbsp;<%= link_to "一覧を見る", deliveries_index_path, class:"btn btn-primary" %></h4>
+          <h4>注文履歴 <%= link_to "一覧を見る", orders_path, class:"btn btn-primary" %></h4>
         </div>
       </div>
     </div>
