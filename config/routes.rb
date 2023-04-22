@@ -8,9 +8,11 @@ delete 'cart_items/destroy_all' => 'cart_items#destroy_all',as: 'destroy_all'
 resources :cart_items, only:[:index, :update, :destroy, :create]
 
   #publicオーダー
-resources :orders, only:[:new, :create, :index, :show]
+get 'orders/complete' => 'orders#complete', as: 'complete'
 post 'orders/check' => 'orders#check', as: 'check'
-post 'orders/complete' => 'orders#complete', as: 'complete'
+resources :orders, only:[:new, :create, :index, :show]
+
+
 
 get '/items' => 'public/items#index'
 get '/items/:id' => 'public/items#show', as: 'items_show'
@@ -65,5 +67,5 @@ devise_for :admin, controllers: {
   #adminオーダー
   get '/admin/orders/:id' => 'admin/orders#show'
   patch 'admin/orders/:id' => 'admin/orders#update'
-  
+
 end

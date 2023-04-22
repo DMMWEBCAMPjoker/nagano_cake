@@ -27,7 +27,7 @@
         </tbody>
         <% end %>
       </table>
-      
+
        <table class="table table-borderless">
           <tr><th>支払方法</th><td><%= @order.payment_method_i18n %></td></tr>
           <tr><th>お届け先</th><td>〒<%= @order.delivery_postcode %>
@@ -45,10 +45,10 @@
           <td><%= (@sum += @order.postage).to_s(:delimited) %></td></tr>
       </table>
     </div>
-    
+
 
       <div class="row offset-md-5 font-weight-bold">
-      <%= form_with model: @order,  url: complete_path, method: :post do |f| %>
+      <%= form_with model: @order,  url: orders_path, method: :post do |f| %>
         <%= f.hidden_field :delivery_postcode, :value => @order.delivery_postcode %>
         <%= f.hidden_field :delivery_address, :value => @order.delivery_address %>
         <%= f.hidden_field :delivery_name, :value => @order.delivery_name %>
