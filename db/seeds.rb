@@ -9,27 +9,3 @@ Admin.create!(
     email: 'admin@admin',
     password: 'testtest'
  )
-# Item.create!(
-#    #id: 1,
-#    name: 'チョコバナナミルフィーユ',
-#    price: 1000,
-#    description: 'aa',
-#    genre_id: 1
-# )
-
-#item.image.attach(io: File.open(Rails.root.join('app/assets/images/cat.jpg')),filename: 'cat.jpg')
-# Customer.create!(
-#        email: 'admin@admin',
-#        password: 'testtest'
-# )
-
-CartItem.create!(
-   item_id: 2,
-   customer_id: 1,
-   quantity: 1
- )
-# Admin.create!(
-#     email: 'admin@admin',
-#     password: 'testtest'
-#  )
-
