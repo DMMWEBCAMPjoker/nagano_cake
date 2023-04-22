@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @sum = 0
     @order.postage = 800
-    
+
     if params[:order][:address_number] == "1"
       @order.delivery_name = current_customer.last_name + current_customer.first_name
       @order.delivery_address = current_customer.address
@@ -46,13 +46,14 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     cart_items = current_customer.cart_items
+    @order.customer_id = current_customer.id
     if @order.save
       cart_items.each do |cart_item|
         order_item = OrderItem.new
         order_item.item_id = cart_item.item_id
         order_item.order_id = @order.id
         order_item.quantity = cart_item.quantity
-        order_item.price = cart_item.item.price
+        order_item.tax_item_price = cart_item.item.price
         order_item.save
       end
         redirect_to complete_path
@@ -73,7 +74,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:payment_method, :delivery_name, :delivery_address, :delivery_postcode, :postage, :invoice)
+    params.require(:order).permit(:customer_id,:payment_method, :delivery_name, :delivery_address, :delivery_postcode, :postage, :invoice)
   end
 
   def delivery_params
