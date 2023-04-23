@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-dark mt-0 mb-0">
+      <nav class="navbar navbar-expand-sm navbar-light bg-warning mt-0 mb-0">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -62,6 +62,16 @@
             </ul>
         </div>
     </nav>
+    <div class="d-flex flex-row-reverse bd-highlight bg-warning">
+        <%= form_with model: @genre, url: admin_genres_create_path, method: :post do |f| %>
+        <%= f.text_field :name %>
+        <% end %>
+    </div>
+    <% if customer_signed_in? %>
+        <div class="center-block bg-warning">
+            <p class="text-center">ようこそ<%= current_customer.last_name %><%= current_customer.first_name %>さん</p>
+        </div>
+    <% end %>
     </header>
      <%= yield %>
   </body>
