@@ -4,7 +4,6 @@
 元々近隣住民たちが顧客だったが、昨年始めたInstagramから人気となり、全国から注文が来るようになった。<br>
 InstagramのDMやメールで通販の注文を受けていたが、情報管理が煩雑になってきたため、管理機能を含んだ通販サイトを開設しようと思い至った。
 
-
 ## 通販について
 
 ・通販では注文に応じて製作する受注生産型としている。<br>
@@ -38,8 +37,6 @@ $ rails s<br>
 メールアドレス：admin@admin<br>
 パスワード：testtest<br>
 
-
-
 ## 開発環境<br>
 Cloud9<br>
 
@@ -59,12 +56,6 @@ Cloud9<br>
 ・kaminari<br>
 ・enum_help<br>
 ・ActiveStorage<br>
-
-
-**ER図**<br>
-
-
-
 
 ## 作成者<br>
 
