@@ -1,19 +1,18 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-2">
-      <h4>ジャンル検索</h4>
-    </div>
+  <div class="row justify-content-lg-center">
 
-    <div class='col-md-10'>
+    <div class='col-md-10 col-md-offset-2'>
       <div>
         <h4>商品一覧(全<%=@items.count %>件)</h4>
       </div>
 
   <div class="row mt-3 mb-3">
    <% @items.each do |item| %>
-   <div class="d-flex flex-column">
+   <div class="d-flex flex-column mx-2">
+     <%= link_to items_show_path(item.id) do %>
      <%= image_tag item.get_item_image(200, 200) %>
-      <p><%= link_to item.name,items_show_path(item.id) %></p>
+      <% end %>
+      <p><%= item.name %></p>
       <p>¥<%= item.price.to_s(:delimited) %></p>
    </div>
        <% end %>
@@ -24,5 +23,4 @@
        </div>
     </div>
   </div>
-
 </div>
