@@ -27,32 +27,32 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 ・会員情報の管理機能(情報閲覧、編集、退会処理)<br>
 ・販売ステータスの選択、注文ステータスの更新、製作ステータスの更新機能<br>
 
-## 使用方法
+## 使用方法<br>
 $ git clone git@github.com:DMMWEBCAMPjoker/nagano_cake.git<br>
 $ bucdle:install<br>
 $ rails db:migrate<br>
 $ rails db:seed<br>
 $ rails s<br>
 
-**管理者ログイン**
+**管理者ログイン**<br>
 メールアドレス：admin@admin<br>
 パスワード：testtest<br>
 
 
 
-## 開発環境
+## 開発環境<br>
 Cloud9<br>
 
-**バックエンド**
+**バックエンド**<br>
 ・Ruby 3.1.2<br>
 ・Ruby on Rails 6.1.7<br>
 ・SQLite3<br>
 
-**フロントエンド**
+**フロントエンド**<br>
 ・HTML<br>
 ・SCSS<br>
 
-**その他**
+**その他**<br>
 ・devise<br>
 ・Bootstrap<br>
 ・Font Awesome<br>
@@ -61,12 +61,12 @@ Cloud9<br>
 ・ActiveStorage<br>
 
 
-**ER図**
+**ER図**<br>
 
 
 
 
-## 作成者
+## 作成者<br>
 
 チーム　Joker <br>
 ・こば<br>
