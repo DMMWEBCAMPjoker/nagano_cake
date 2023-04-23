@@ -1,8 +1,7 @@
 <div class="container">
-  <div class="row">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <table class="table">
       <h4 class="bg-light"><strong>ログイン</strong></h4>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <tr>
           <td>メールアドレス</td>
           <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
@@ -15,8 +14,9 @@
           <td></td>
           <td><%= f.submit "ログイン", class:"btn btn-primary" %></td>
         </tr>
-        <% end %>
     </table>
+    <% end %>
+    <div class="row">
     <table>
       <tr>
         <td><p class="bg-light"><strong>会員登録がお済みでない方はこちら</strong></p></td>
@@ -25,6 +25,6 @@
          <td><%= link_to "こちら", new_customer_registration_path %>から新規登録を行なってください</td>
        </tr>
     </table>
-  </div>
+    </div>
 </div>
 
