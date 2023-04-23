@@ -16,13 +16,13 @@ class Admin::OrderItemsController < ApplicationController
       end
     @order.update(status: 4) if is_updated #is_updatedがtrueの場合、注文ステータスが「発送準備中」に更新。上のif文でis_updatedがfalseの場合、更新されない
     end
-  redirect_to order_path(@order)
+  redirect_to admin_orders_show_path(@order)
   end
 
-　private
+  private
 
-　def order_item_params
-  　params.require(:order_item).permit(:production_status)
-　end
+  def order_item_params
+    params.require(:order_item).permit(:production_status)
+  end
 
 end

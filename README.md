@@ -1,24 +1,74 @@
-# README
+# ながのCAKE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト
+元々近隣住民たちが顧客だったが、昨年始めたInstagramから人気となり、全国から注文が来るようになった。
+InstagramのDMやメールで通販の注文を受けていたが、情報管理が煩雑になってきたため、管理機能を含んだ通販サイトを開設しようと思い至った。
 
-Things you may want to cover:
 
-* Ruby version
+## 通販について
 
-* System dependencies
+・通販では注文に応じて製作する受注生産型としている。
+・現在通販での注文量は十分に対応可能な量の為、1日の受注量に制限は設けない。
+・送料は1配送につき全国一律800円。
+・友人や家族へのプレゼントなど、注文者の住所以外にも商品を発送できる。
+支払方法はクレジットカード、銀行振込から選択できる。
 
-* Configuration
+## 主な実装機能
+【会員側機能】
+・新規会員登録、ログイン/ログアウト、退会機能
+・商品の注文機能
+・注文履歴の管理機能
+・配送先の管理機能
 
-* Database creation
+【管理者側機能】
+・管理者ログイン/ログアウト機能
+・商品の新規追加、編集、閲覧機能
+・商品ジャンルの新規追加、編集機能
+・会員情報の管理機能(情報閲覧、編集、退会処理)
+・販売ステータスの選択、注文ステータスの更新、製作ステータスの更新機能
 
-* Database initialization
+## 使用方法
+$ git clone git@github.com:DMMWEBCAMPjoker/nagano_cake.git
+$ bucdle:install
+$ rails db:migrate
+$ rails db:seed
+$ rails s
 
-* How to run the test suite
+**管理者ログイン**
+メールアドレス：admin@admin
+パスワード：testtest
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## 開発環境
+Cloud9
+
+**バックエンド**
+・Ruby 3.1.2
+・Ruby on Rails 6.1.7
+・SQLite3
+
+**フロントエンド**
+・HTML
+・SCSS
+
+**その他**
+・devise
+・Bootstrap
+・Font Awesome
+・kaminari
+・enum_help
+・ActiveStorage
+
+
+**ER図**
+
+
+
+
+## 作成者
+
+チーム　Joker 
+・こば
+・かわかみ
+・こまつ

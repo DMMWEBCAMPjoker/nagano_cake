@@ -10,8 +10,8 @@
         <tr><th class="table-active">配送先</th><td>〒<%= @order.delivery_postcode %><br>
                 <%= @order.delivery_address %><br>
                 <%= @order.delivery_name %></td></tr>
-        <tr><th class="table-active">支払方法</th><td><%= @order.payment_method %></td></tr>
-        <tr><th class="table-active">ステータス</th><td><%= @order.status %></td></tr>
+        <tr><th class="table-active">支払方法</th><td><%= @order.payment_method_i18n %></td></tr>
+        <tr><th class="table-active">ステータス</th><td><%= @order.status_i18n %></td></tr>
       </table>
       </div>
       <div class="col-sm-3 col-md-3 col-lg-3 px-3 offset-1">

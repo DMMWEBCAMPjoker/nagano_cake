@@ -65,7 +65,11 @@ devise_for :admin, controllers: {
   patch '/admin/genres/:id' => 'admin/genres#update', as: 'admin_genres_update'
 
   #adminオーダー
-  get '/admin/orders/:id' => 'admin/orders#show'
-  patch 'admin/orders/:id' => 'admin/orders#update'
+  get '/admin/orders' => 'admin/orders#index'
+  get '/admin/orders/:id' => 'admin/orders#show', as: 'admin_orders_show'
+  patch '/admin/orders/:id' => 'admin/orders#update', as: 'admin_orders_update'
+  patch '/admin/order_items/:id' => 'admin/order_items#update', as: 'admin_order_items_update'
+
+
 
 end
