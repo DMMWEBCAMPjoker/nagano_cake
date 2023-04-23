@@ -69,6 +69,9 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @sum = 0
+    @order.order_items.each do |item|
+    @sum = @sum+item.subtotal
+    end
   end
 
   private
