@@ -14,8 +14,8 @@
    <div class="d-flex flex-column">
      <%= link_to items_show_path(item.id) do %>
      <%= image_tag item.get_item_image(200, 200) %>
-     <%= link_to item.name,items_show_path(item.id)  %>
       <% end %>
+      <p><%= item.name %></p>
       <p>¥<%= item.price.to_s(:delimited) %></p>
    </div>
        <% end %>
