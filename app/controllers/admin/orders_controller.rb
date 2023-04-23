@@ -2,14 +2,14 @@ class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @orders = Order.page(params[:page])
+    @orders = Order.page(params[:page]).per(10)
   end
 
   def show
     @order = Order.find(params[:id])
-    @total = 0
+    @sum = 0
     @order.order_items.each do |item|
-      @total = @total+item.subtotal
+    @sum = @sum+item.subtotal
     end
   end
 
