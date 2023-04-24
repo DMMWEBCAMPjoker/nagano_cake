@@ -17,8 +17,10 @@
 	 <div class="row">
       <% @items.first(4).each do |item| %>
       <div class="flex-md-wrap">
+         <%= link_to items_show_path(item.id) do %>
          <%= image_tag item.get_item_image(200, 200) %>
-         <p><%= link_to item.name,items_show_path(item.id) %></p>
+         <% end %>
+         <p><%= item.name %></p>
          <p>¥<%= item.price.to_s(:delimited) %></p>
       </div>
       <% end %>
@@ -29,3 +31,7 @@
   <%= link_to "全ての商品を見る>", items_path %>
  </div>
 </div>
+
+<footer class="footer bg-warning">
+<p class="text-center">DMM WebCamp from チームJoker</p>
+</footer>
