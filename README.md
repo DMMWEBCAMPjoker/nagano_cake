@@ -28,7 +28,7 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 
 ## 使用方法<br>
 $ git clone git@github.com:DMMWEBCAMPjoker/nagano_cake.git<br>
-$ budle:install<br>
+$ bundle:install<br>
 $ rails db:migrate<br>
 $ rails db:seed<br>
 $ rails s<br>
