@@ -4,6 +4,7 @@
       <h3 class="table-active" style="width:19%">注文情報確認</h3>
     </div>
   </div>
+  <!--商品テーブル-->
     <div class="row">
     <div class="col-sm-7 offset-sm-1">
       <table class="table table-bordered">
@@ -27,7 +28,7 @@
         </tbody>
         <% end %>
       </table>
-
+  <!--支払方法テーブル-->
        <table class="table table-borderless">
           <tr><th>支払方法</th><td><%= @order.payment_method_i18n %></td></tr>
           <tr><th>お届け先</th><td>〒<%= @order.delivery_postcode %>
@@ -35,6 +36,7 @@
         <%= @order.delivery_name %></td></tr>
        </table>
        </div>
+  <!--送料テーブル-->
     <div class="col-sm-3">
       <table class="table table-bordered">
           <tr class="table border-end"><th class="table-active" style="width:50%">送料</th>
@@ -46,7 +48,7 @@
       </table>
     </div>
 
-
+  <!--注文確定ボタン-->
       <div class="row offset-md-5 font-weight-bold">
       <%= form_with model: @order,  url: orders_path, method: :post do |f| %>
         <%= f.hidden_field :delivery_postcode, :value => @order.delivery_postcode %>
