@@ -2,7 +2,6 @@ class CartItemsController < ApplicationController
   before_action :authenticate_customer!
 
   def index
-    #@cart_items = current_customer.cart_items
     @cart_items = CartItem.all
 
     @sum = 0
@@ -40,7 +39,7 @@ class CartItemsController < ApplicationController
       if cart_item.save
       redirect_to  cart_items_path
       else
-      redirect_to  items_path
+      redirect_back(fallback_location: root_path)
       end
   end
 
