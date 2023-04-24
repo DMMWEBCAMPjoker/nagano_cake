@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       if current_customer
         customers_my_page_path
       elsif @admin
-        admin_customers_path
+        admin_orders_path
       else
         root_path
       end
