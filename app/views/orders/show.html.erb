@@ -8,7 +8,7 @@
     <div class="col-sm-8 col-md-8 col-lg-8 px-8">
       <p class="font-weight-bold">注文情報</p>
       <table class="table table-bordered">
-        <tr><th class="table-active">注文日</th><td><%= @order.created_at.strftime("%Y/%m/%d") %></td></tr>
+        <tr><th class="table-active col-lg-2">注文日</th><td><%= @order.created_at.strftime("%Y/%m/%d") %></td></tr>
         <tr><th class="table-active">配送先</th><td>〒<%= @order.delivery_postcode %><br>
                 <%= @order.delivery_address %><br>
                 <%= @order.delivery_name %></td></tr>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-8 col-md-8 col-lg-8 px-8">
+      <div class="col-sm- col-md-8 col-lg-10 px-8">
         <p class="font-weight-bold">注文内容</p>
         <table class="table table-bordered">
           <thead>
