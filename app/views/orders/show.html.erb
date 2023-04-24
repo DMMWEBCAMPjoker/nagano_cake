@@ -7,6 +7,7 @@
   <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8 px-8">
       <p class="font-weight-bold">注文情報</p>
+  <!--注文情報テーブル-->
       <table class="table table-bordered">
         <tr><th class="table-active col-lg-2">注文日</th><td><%= @order.created_at.strftime("%Y/%m/%d") %></td></tr>
         <tr><th class="table-active">配送先</th><td>〒<%= @order.delivery_postcode %><br>
@@ -18,6 +19,7 @@
       </div>
       <div class="col-sm-3 col-md-3 col-lg-3 px-3 offset-1">
         <p class="font-weight-bold">請求情報</p>
+  <!--請求情報テーブル-->
         <table class="table table-bordered">
             <tr><th class="table-active">商品合計</th><td><%= @sum.to_s(:delimited) %></td></tr>
             <tr><th class="table-active">配送料</th><td><%= @order.postage %></td></tr>
@@ -28,6 +30,7 @@
     <div class="row">
       <div class="col-sm- col-md-8 col-lg-10 px-8">
         <p class="font-weight-bold">注文内容</p>
+  <!--注文内容テーブル-->
         <table class="table table-bordered">
           <thead>
             <tr>
