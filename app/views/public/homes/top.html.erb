@@ -1,0 +1,37 @@
+<%= flash[:messege] %>
+<div class='container-fluid'>
+	<div class="row">
+	  <div class="col-12 ml-auto" style="text-align: center;">
+	  <div class="card" style="max-width: auto;">
+       <img class="background-image" src="/assets/cake.jpeg" style="height: 600px;" />
+      <div class="card-img-body">
+       <p class="black"><strong>ようこそながのケーキへ！</strong></p>
+       <p class="black"><strong>このサイトはケーキ販売のECサイトになります</strong></p>
+       <p class="black"><strong>会員でない方も商品の閲覧はできますが、</strong></p>
+       <p class="black"><strong>購入には会員登録が必要になります。</strong></p>
+      </div>
+    </div>
+	 <div class="row">
+	  <h2>新着商品</h2>
+	 </div>
+	 <div class="row">
+      <% @items.first(4).each do |item| %>
+      <div class="flex-md-wrap">
+         <%= link_to items_show_path(item.id) do %>
+         <%= image_tag item.get_item_image(200, 200) %>
+         <% end %>
+         <p><%= item.name %></p>
+         <p>¥<%= item.price.to_s(:delimited) %></p>
+      </div>
+      <% end %>
+     </div>
+   </div>
+  </div>
+  </div>
+  <%= link_to "全ての商品を見る>", items_path %>
+ </div>
+</div>
+
+<footer class="footer bg-warning">
+<p class="text-center">DMM WebCamp from チームJoker</p>
+</footer>
